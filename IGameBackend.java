@@ -1,36 +1,26 @@
-
 public interface IGameLibraryBackend {
 	/**
 	 * Adds a new game to the Backend's database and is stored in the Red-Black
 	 * tree.
-	 * 
-	 * @param game the game to add
+	 *
+	 * @param info the game information containing the name, year, genre, publisher
 	 */
-	public void addGame(IGame game);
+	public boolean addGame(String info);
 
 	/**
 	 * Deletes a game from the database of the Red-Black tree.
-	 * 
-	 * @param game the game to remove
+	 *
+	 * @param name the name of the game to remove
 	 */
-	public void removeGame(String name);
+	public boolean removeGame(String name);
 
 	/**
 	 * Search through all the games in the database and returns the games whose name
 	 * matches the word inputted in.
-	 * 
-	 * @param word the name of the game
-	 * @return the name of the game which matches the word inputted in
+	 *
+	 * @param name the name of the game
+	 * @return game the game object
 	 */
-	public String searchByNameWord(String word);
-
-	/**
-	 * This method can be used to set a filter for the published year contained in
-	 * the search results. A game is only returned as a result for a search by year.
-	 * 
-	 * @param year The year the game was published
-	 */
-	public void setPublisherYear(int year);
+	public IGame searchByName(String name);
 
 }
-
