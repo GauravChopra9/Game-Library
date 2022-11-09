@@ -1,131 +1,0 @@
-Script started on 2022-11-09 10:54:43+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="80" LINES="24"]
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git status
-[?2004lOn branch DataWrangler
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-	[31mlog[m
-
-nothing added to commit but untracked files present (use "git add" to track)
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git log -1
-[?2004l[?1h=[33mcommit 5f8818cacbeb762d58d2ec1d1fb61aee02921b1d[m[33m ([m[1;36mHEAD -> [m[1;32mDataWrangler[m[33m)[m[m
-Author: Gaurav <gmchopra@wisc.edu>[m
-Date:   Wed Nov 9 10:53:51 2022 +0000[m
-[m
-    Commiting DataWrangler files[m
-[K[?1l>[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ make clean
-[?2004lrm *.class
-rm: cannot remove '*.class': No such file or directory
-make: *** [Makefile:11: clean] Error 1
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ ls
-[?2004lDWGame.java             IGameBackend.java          RemovingRedBlackTreeADT.java
-DataWranglerTests.java  IGameLibraryFrontEnd.java  [0m[01;31mjunit5.jar[0m
-GameLoader.java         IGameLoader.java           log
-IGame.java              Makefile                   vgsales2.xml
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ make runTests
-[?2004ljavac DWGame.java
-javac GameLoader.java
-javac -cp .:junit5.jar DataWranglerTests.java
-java -jar junit5.jar --cp . --scan-classpath
-
-Thanks for using JUnit! Support its development at https://junit.org/sponsoring
-
-[36m╷[0m
-[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
-[36m│  └─[0m [36mDataWranglerTests[0m [32m✔[0m
-[36m│     ├─[0m [34mtest1()[0m [32m✔[0m
-[36m│     ├─[0m [34mtest2()[0m [32m✔[0m
-[36m│     ├─[0m [34mtest3()[0m [32m✔[0m
-[36m│     ├─[0m [34mtest4()[0m [32m✔[0m
-[36m│     ├─[0m [34mtest5()[0m [32m✔[0m
-[36m│     └─[0m [34mtest6()[0m [32m✔[0m
-[36m└─[0m [36mJUnit Vintage[0m [32m✔[0m
-
-Test run finished after 3395 ms
-[         3 containers found      ]
-[         0 containers skipped    ]
-[         3 containers started    ]
-[         0 containers aborted    ]
-[         3 containers successful ]
-[         0 containers failed     ]
-[         6 tests found           ]
-[         0 tests skipped         ]
-[         6 tests started         ]
-[         0 tests aborted         ]
-[         6 tests successful      ]
-[         0 tests failed          ]
-
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ exit[K[K[K[Kls
-[?2004lDWGame.class             IGameLibraryFrontEnd.java
-DWGame.java              IGameLoader.class
-DataWranglerTests.class  IGameLoader.java
-DataWranglerTests.java   Makefile
-GameLoader.class         RemovingRedBlackTreeADT.java
-GameLoader.java          [0m[01;31mjunit5.jar[0m
-IGame.class              log
-IGame.java               vgsales2.xml
-IGameBackend.java
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ make clean
-[?2004lrm *.class
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ ls
-[?2004lDWGame.java             IGameBackend.java          RemovingRedBlackTreeADT.java
-DataWranglerTests.java  IGameLibraryFrontEnd.java  [0m[01;31mjunit5.jar[0m
-GameLoader.java         IGameLoader.java           log
-IGame.java              Makefile                   vgsales2.xml
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git add log
-[?2004l[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git commiy[Kt -m''a'd'd'i'n'g' 'l'o'g' 'f'i'l'e'
-[?2004l[DataWrangler 76dd191] adding log file
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 log
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git stta[K[Katus
-[?2004lOn branch DataWrangler
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	[31mmodified:   log[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git status
-[?2004lOn branch DataWrangler
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	[31mmodified:   log[m
-
-no changes added to commit (use "git add" and/or "git commit -a")
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ gt[Kit c[K[K[K[K[Kgit add lo[K[K[K[K[K[K[K[K[K[Kgit add lof [Kg[K[Kg[K[K[K[K[K[K[K[K[K[K[Kgit log
-[?2004l[?1h=[33mcommit 76dd191073388be32a901ef76f86924371859bd4[m[33m ([m[1;36mHEAD -> [m[1;32mDataWrangler[m[33m)[m[m
-Author: Gaurav <gmchopra@wisc.edu>[m
-Date:   Wed Nov 9 10:57:19 2022 +0000[m
-[m
-    adding log file[m
-[m
-[33mcommit 5f8818cacbeb762d58d2ec1d1fb61aee02921b1d[m[m
-Author: Gaurav <gmchopra@wisc.edu>[m
-Date:   Wed Nov 9 10:53:51 2022 +0000[m
-[m
-    Commiting DataWrangler files[m
-[m
-[33mcommit 8ca6b156be8dc3fefc5b848706a3379b5070f98a[m[m
-Author: Ishan Bhutoria <ibhutoria@wisc.edu>[m
-Date:   Tue Nov 8 23:34:39 2022 +0000[m
-[m
-    Changed Backend interface[m
-[m
-[33mcommit 7ab17bbf19c8aecd4e041539fe5615f6a730175d[m[m
-Merge: 5593d37 5a5f94f[m
-Author: Yanbin Chen <ychen877@wisc.edu>[m
-Date:   Thu Oct 20 04:50:11 2022 +0000[m
-[m
-:[K[K[?1l>[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git push
-[?2004lfatal: The current branch DataWrangler has no upstream branch.
-To push the current branch and set the remote as upstream, use
-
-    git push --set-upstream origin DataWrangler
-
-[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ git banch[K[K[K[Kranch
-[?2004l[?1h=* [32mDataWrangler[m[m
-  main[m[m
-[K[?1l>[?2004h]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ [K]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ [K]0;Patron@instance-1: ~/Project2_CT_blue[01;32mPatron@instance-1[00m:[01;34m~/Project2_CT_blue[00m$ exit
-[?2004lexit
-
-Script done on 2022-11-09 11:00:37+00:00 [COMMAND_EXIT_CODE="0"]
