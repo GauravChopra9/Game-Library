@@ -5,10 +5,18 @@ public class AEGame implements IGame, Comparable<AEGame>{
   @Override
   public int compareTo(AEGame o) {
     int compare = this.name.compareTo(o.name);
-    if (compare == 0)
+    if (compare == 0) {
       compare = this.year.compareTo(o.year);
-    if (compare == 0)
-      compare = this.publisher.compareTo(o.year);
+    }
+      
+    if (compare == 0) {
+      compare = this.publisher.compareTo(o.publisher);
+    }
+      
+    if (compare == 0) {
+      compare = this.genre.compareTo(o.genre);
+    }
+      
     return compare;
   }
   
@@ -42,4 +50,11 @@ public class AEGame implements IGame, Comparable<AEGame>{
     return this.genre;
   }
 
-}
+  /**
+   * Placeholder toString
+   */
+  @Override
+  public String toString() {
+    return this.name;
+  }
+ }
