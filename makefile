@@ -1,6 +1,6 @@
-default: runProgram
+default: runTests
 
-runProgram: FrontendEngineerTest.class
+runTests: FrontendEngineerTest.class
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=FrontendEngineerTest
 
 FrontendEngineerTest.class: FrontendEngineerTest.java GameFrontEnd.class FDGameBackend.class TextUITester.class junit5.jar
