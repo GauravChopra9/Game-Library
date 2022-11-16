@@ -6,20 +6,19 @@
 // Notes to Grader:
 
 /**
- * This interface is for a Red-Black Tree ADT that has functions of remove,
- * insert, and contains. It should contain objects that can be compared
+ * This interface is for a Red-Black Tree ADT that has functions of remove, insert, and contains.
+ * It should contain objects that can be compared
  */
-
 public interface IRemovingRedBlackTreeADT <T extends Comparable<T>> {
 
         /**
          * Removes a node in the tree
          *
-         * @param name the game name to be removed
+         * @param data the game data to be removed
          * @return true if the node was deleted, false if it couldn't be found
          *        
         */
-        public boolean remove(String name);
+        public boolean remove(String gameName);
          
         /**
          * Inserts a node into the tree 
@@ -37,5 +36,9 @@ public interface IRemovingRedBlackTreeADT <T extends Comparable<T>> {
         */
         public boolean contains(T data); 
         
-        public T find(String name);
+        /**
+         * @param data the data to find
+         * @return the node with the data
+         */
+        public T find(String gameName);
 }
