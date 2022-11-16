@@ -1,4 +1,3 @@
-
 // --== CS400 Project One File Header ==--
 // Name: Ishan Bhutoria
 // CSL Username: bhutoria
@@ -15,7 +14,7 @@ import java.util.Scanner;
  * 
  * @author Ishan Bhutoria
  */
-public class GameLibraryBackend implements IGameLibraryBackend {
+public class GameLibraryBackend implements IGameBackend {
 
 	/**
 	 * Adds a new game to the Backend's database and is stored in the Red-Black
