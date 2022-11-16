@@ -1,3 +1,10 @@
+default: run
+
+run: GameLibrary.class
+	java GameLibrary
+
+GameLibrary.class: GameLibrary.java GameLoader.class vgsales2.xml RemovingRedBlackTree.class GameLibraryBackend.class GameFrontEnd.class AEGame.class
+	javac GameLibrary.java
 
 runAlgorithmEngineerTests: AlgorithmEngineerTests.class
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=AlgorithmEngineerTests
