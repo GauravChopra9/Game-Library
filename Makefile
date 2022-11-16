@@ -32,7 +32,21 @@ GameAE.class: GameAE.java
 GameBD.class: GameBD.java
 	javac GameBD.java
 
-runTests: runDataWranglerTests runAlgorithmEngineerTests runBackendDeveloperTests
+
+runFrontendDeveloperTests: FrontendDeveloperTest.class
+	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=FrontendDeveloperTest
+FrontendDeveloperTest.class: FrontendDeveloperTest.java GameFrontEnd.class FDGameBackend.class TextUITester.class
+	javac -cp .:junit5.jar FrontendDeveloperTest.java
+GameFrontEnd.class: GameFrontEnd.java
+	javac GameFrontEnd.java
+FDGameBackend.class: FDGameBackend.java FDGame.class
+	javac FDGameBackend.java
+FDGame.class: FDGame.java
+	javac FDGame.java
+TextUITester.class: TextUITester.java
+	javac TextUITester.java
+
+runTests: runDataWranglerTests runAlgorithmEngineerTests runBackendDeveloperTests runFrontendDeveloperTests
 
 clean:
 	rm *.class
