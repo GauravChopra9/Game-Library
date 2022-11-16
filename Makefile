@@ -11,7 +11,7 @@ AEGame.class:
 
  
 runDataWranglerTests: DataWranglerTests.class
-	java -jar junit5.jar --cp . --scan-classpath
+	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=DataWranglerTests
 DataWranglerTests.class: DataWranglerTests.java GameLoader.class DWGame.class vgsales2.xml
 	javac -cp .:junit5.jar DataWranglerTests.java
 GameLoader.class: GameLoader.java DWGame.class
