@@ -7,26 +7,22 @@
 
 //placeholder class
 
-public class GameAE<T extends Comparable> implements RemovingRedBlackTreeADT {
+public class GameAE<T extends Comparable> {
 
-	@Override
 	public boolean remove(Comparable data) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
-	@Override
 	public boolean insert(Comparable data) {
 		// TODO Auto-generated method stub
 		return true;
 	}
 
-	@Override
 	public T find(String name) {
 		return null;
 	}
 
-	@Override
 	public boolean contains(Comparable data) {
 		// TODO Auto-generated method stub
 		return false;
