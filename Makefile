@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 runAlgorithmEngineerTests: AlgorithmEngineerTests.class
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=AlgorithmEngineerTests
@@ -20,11 +19,8 @@ GameLoader.class: GameLoader.java DWGame.class
 DWGame.class: DWGame.java
 	javac DWGame.java
 
-runTests: runDataWranglerTests runAlgorithmEngineerTests
 
-clean:
-=======
-runTests: compile 
+runBackendDeveloperTests: compile 
 	java -jar junit5.jar --class-path=. --include-classname=.* --select-class=BackendDeveloperTests
 compile: GameLibraryBackend.class BackendDeveloperTests.class GameAE.class GameBD.class 
 GameLibraryBackend.class: GameLibraryBackend.java
@@ -35,7 +31,8 @@ GameAE.class: GameAE.java
 	javac GameAE.java
 GameBD.class: GameBD.java
 	javac GameBD.java
-clean: 
->>>>>>> BackendDeveloper
-	rm *.class
 
+runTests: runDataWranglerTests runAlgorithmEngineerTests runBackendDeveloperTests
+
+clean:
+	rm *.class
