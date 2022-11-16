@@ -104,7 +104,7 @@ public class AlgorithmEngineerTests {
     assertEquals(_instance.toLevelOrderStringWithColors(), "[ 7(1) ]");
     assertTrue(_instance.remove(7)); // remove root
     assertEquals(_instance.toLevelOrderStringWithColors(), "[  ]");
-    assertTrue(_instance.remove(1)); // remove from empty tree
+    assertTrue(!_instance.remove(1)); // remove from empty tree
     assertEquals(_instance.toLevelOrderStringWithColors(), "[  ]");
   }
   

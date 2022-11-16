@@ -10,12 +10,6 @@ import java.util.NoSuchElementException;
 import java.util.Random;
 import java.util.Stack;
 import java.util.ArrayList;
-// JUnit Imports 
-import org.junit.BeforeClass;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Red-Black Tree implementation with a Node inner class for representing
@@ -480,84 +474,4 @@ public class RedBlackTree<T extends Comparable<T>> {
       return blackHeight;
      
     }
- 
-    /**
-     * Class containing JUnit tests for RedBlackTree
-     */
-    protected static class testRBTree {
-      @BeforeEach
-      public void createInstance() {
-          _instance = new RedBlackTree<Integer>();
-      }
-      /**
-       * Test creating a small tree and inserting invalid values
-       */
-      @Test
-      public void test1() {
-        // insert null
-        try {
-          _instance.insert(null);
-        }
-        catch (NullPointerException e) {
-          assertEquals("[  ]", _instance.toLevelOrderString() );
-        }
-        // insert duplicates
-        try {
-          _instance.insert(1);
-          _instance.insert(2);
-          _instance.insert(3);
-          _instance.insert(2);
-          _instance.insert(3);
-        }
-        catch (IllegalArgumentException e) {
-          assertEquals("[ 2, 1, 3 ]",_instance.toLevelOrderString());
-        }    
-      }
-      /**
-       * Test that insert is modifying the tree correctly each step of the way
-       */
-      @Test
-      public void test2() {
-        _instance.insert(1);
-        assertEquals(_instance.toLevelOrderStringWithColors(),"[ 1(1) ]");
-        _instance.insert(2);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 1(1), 2(0) ]");
-        _instance.insert(3);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 2(1), 1(0), 3(0) ]");
-        _instance.insert(4);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 2(1), 1(1), 3(1), 4(0) ]");
-        _instance.insert(5);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 2(1), 1(1), 4(1), 3(0), 5(0) ]");
-        _instance.insert(6);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 2(1), 1(1), 4(0), 3(1), 5(1), 6(0) ]");
-        _instance.insert(7);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 2(1), 1(1), 4(0), 3(1), 6(1), 5(0), 7(0) ]");
-        _instance.insert(9);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 4(1), 2(0), 6(0), 1(1), 3(1), 5(1), 7(1), 9(0) ]");
-        _instance.insert(8);
-        assertEquals(_instance.toLevelOrderStringWithColors(), "[ 4(1), 2(0), 6(0), 1(1), 3(1), 5(1), 8(1), 7(0), 9(0) ]");
-        // make sure black height is consistent
-        assertTrue(_instance.isBlackHeightConsistent());
-      }
-      /**
-       * Test inserting a large number of random integers and making sure the blackHeights are equal 
-       */
-      @Test
-      public void test3() {
-        // create an arraylist of integers with values 1-100
-        ArrayList<Integer> vals = new ArrayList<Integer>();
-        Random rand = new Random();
-        for (int i = 0; i < 100; ++i) { 
-          vals.add(i+1);
-        }
-        
-        // insert random integers from 1-100 into the RBT
-        while (vals.size() != 0) {
-          int randVal = rand.nextInt(vals.size());
-          _instance.insert(vals.get(randVal));
-          vals.remove(randVal);  // removing inserted value from the arraylist ensures we don't insert dups  
-        }
-        assertTrue(_instance.isBlackHeightConsistent());
-      }
-    }  
 }
