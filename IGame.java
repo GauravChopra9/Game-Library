@@ -26,7 +26,7 @@ public interface IGame {
 
 
     /**
-     * Returns the gengre of this game
+     * Returns the genre of this game
      * @return genre of game
      */
     String getGenre();
