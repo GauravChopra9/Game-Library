@@ -47,6 +47,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 				}
 			} catch (Exception e) { 
 				System.out.println("Invalid input!");
+				continue;
 			}
 
 			if (input == 1) {
@@ -63,6 +64,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 					name = userInputScanner.nextLine();
 				} catch (Exception e) {
 					System.out.println("Unexpected Error: read user input game name");
+					continue;
 				}
 
 				// request for publisher of the new game
@@ -72,6 +74,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 					publisher = userInputScanner.nextLine();
 				} catch (Exception e) {
 					System.out.println("Unexpected Error: read user input game publisher");
+					continue;
 				}
 
 				// request for publish year of the new game
@@ -81,6 +84,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 					year = userInputScanner.nextLine();
 				} catch (Exception e) {
 					System.out.println("Unexpected Error: read user input game publish year");
+					continue;
 				}
 
 				// request for genre of the new game
@@ -89,7 +93,8 @@ public class GameFrontEnd implements IGameFrontEnd {
 				try {
 					genre = userInputScanner.nextLine();
 				} catch (Exception e) {
-					System.out.println("Unexpected Error: read user input game genre");				
+					System.out.println("Unexpected Error: read user input game genre");
+	                                continue;				
 				}
 
 				// call the back-end add game method
