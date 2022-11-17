@@ -141,7 +141,11 @@ public class RemovingRedBlackTree<T extends Comparable<T>> extends RedBlackTree<
   public T find(String gameName) {
     if (gameName == null)
       throw new NullPointerException("This RedBlackTree cannot store null references.");
-    return findHelper(gameName, super.root).data;
+
+    T toReturn = findHelper(gameName.toUpperCase(), super.root).data;
+    if (toReturn == null) 
+        return null;
+    else return toReturn;
   }
   /**
    * Recursive helper for find
@@ -155,7 +159,7 @@ public class RemovingRedBlackTree<T extends Comparable<T>> extends RedBlackTree<
       // we are at a null child, value is not in tree
       return null;
     } else {
-      int compare = gameName.compareTo(((IGame)subtree.data).getName());
+      int compare = gameName.compareTo(((IGame)subtree.data).getName().toUpperCase());
       if (compare < 0) {
         // go left in the tree
         return findHelper(gameName, subtree.leftChild);
@@ -274,12 +278,10 @@ public class RemovingRedBlackTree<T extends Comparable<T>> extends RedBlackTree<
   @Override
   public boolean remove(String gameName) {
     // if the tree has only one node, remove root
-    System.out.println("Remove " +gameName);
     try {
-      removeHelper(gameName, super.root);
+      removeHelper(gameName.toUpperCase(), super.root);
     }
     catch (NoSuchElementException e) {
-      System.out.println("remove fail");
       return false;
     }  
       // if we found it, reduce size and return true
@@ -300,11 +302,11 @@ public class RemovingRedBlackTree<T extends Comparable<T>> extends RedBlackTree<
     }
       
     // recursively search for node- if it's in the left, remove from the left
-    if (gameName.compareTo(((IGame)(root.data)).getName()) < 0) {
+    if (gameName.toUpperCase().compareTo(((IGame)(root.data)).getName().toUpperCase()) < 0) {
       root.leftChild = removeHelper(gameName, root.leftChild);
     }
     // else if it's in the right, remove from the right
-    else if (gameName.compareTo(((IGame)(root.data)).getName()) > 0) {
+    else if (gameName.toUpperCase().compareTo(((IGame)(root.data)).getName().toUpperCase()) > 0) {
       root.rightChild = removeHelper(gameName, root.rightChild);
     }
     // else remove what we find
