@@ -174,7 +174,33 @@ public class AlgorithmEngineerTests {
     assertEquals(_instanceGames.toLevelOrderStringWithColors(), "[ Elden Ring(1) ]");
    
   }
+	
+    @Test
+  public void test6() {
+    RemovingRedBlackTree<AEGame> _instanceGames = new RemovingRedBlackTree<AEGame>();
+    AEGame test1 = new AEGame("Xenoblade Chronicles 3", "Monolith Soft", "2022", "RPG");
+    AEGame test2 = new AEGame("Final Fantasy III", "Matrix Software", "2006", "RPG");
+    AEGame test3 = new AEGame("Final Fantasy III", "Square Enix", "2006", "RPG");
+    AEGame test4 = new AEGame("The Legend of Zelda, Majora's Mask", "Nintendo", "2000,", "Action-Adventure");
+    AEGame test5 = new AEGame("The Legend of Zelda, Majora's Mask", "Nintendo", "2003,", "Action-Adventure");
+    AEGame test6 = new AEGame("Elden Ring", "FromSoftware", "2022", "RPG");
 
+    // add some games
+    _instanceGames.insert(test1);
+    _instanceGames.insert(test2);
+    _instanceGames.insert(test3);
+    _instanceGames.insert(test4);
+    _instanceGames.insert(test5);
+    _instanceGames.insert(test6);
+
+    assertEquals(_instanceGames.find("xenoblade chRonicles 3"), test1);
+    assertEquals(_instanceGames.find("Final Fantasy III"),test3);
+    assertEquals(_instanceGames.find("sdfsdfs"),null);
+
+    assertTrue(!_instanceGames.remove("fghmdrjhrthetghe"));
+
+    assertTrue(_instanceGames.remove("xenoblade chronicles 3"));
+  }
   public static void main(String[] args) {
     
     

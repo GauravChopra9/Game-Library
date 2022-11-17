@@ -10,10 +10,15 @@ public class GameLibrary {
         // load the books from the data file
         List<IGame> gameList = gameLoader.loadGames("vgsales2.xml");
         // instantiate the backend
-        IGameBackend backend = new GameLibraryBackend();
+        IGameBackend backend = new GameLibraryBackend(new RemovingRedBlackTree());
         // add all the books to the backend
-        for (IGame game : gameList) backend.addGame(game.getName(), game.getPublisher(), game.getYear(), game.getGenre());
-        // instantiate the scanner for user input
+        for (IGame game : gameList){
+		try{
+	       	backend.addGame(game.getName(), game.getPublisher(), game.getYear(), game.getGenre());
+		}catch(IllegalArgumentException excpt){
+		}
+	}
+		// instantiate the scanner for user input
         Scanner userInputScanner = new Scanner(System.in);
         // instantiate the front end and pass references to the scanner, backend, and isbn validator to it
         IGameFrontEnd frontend = new GameFrontEnd(userInputScanner, backend);
