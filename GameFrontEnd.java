@@ -45,8 +45,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 					System.out.println("Invalid input!");
 					continue;
 				}
-			} catch (Exception e) {
-				e.printStackTrace();
+			} catch (Exception e) 
 				System.out.println("Invalid input!");
 			}
 
@@ -63,7 +62,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 				try {
 					name = userInputScanner.nextLine();
 				} catch (Exception e) {
-					e.printStackTrace();
 					System.out.println("Unexpected Error: read user input game name");
 				}
 
@@ -73,7 +71,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 				try {
 					publisher = userInputScanner.nextLine();
 				} catch (Exception e) {
-					e.printStackTrace();
 					System.out.println("Unexpected Error: read user input game publisher");
 				}
 
@@ -83,7 +80,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 				try {
 					year = userInputScanner.nextLine();
 				} catch (Exception e) {
-					e.printStackTrace();
 					System.out.println("Unexpected Error: read user input game publish year");
 				}
 
@@ -93,7 +89,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 				try {
 					genre = userInputScanner.nextLine();
 				} catch (Exception e) {
-					e.printStackTrace();
 					System.out.println("Unexpected Error: read user input game genre");				
 				}
 
@@ -114,7 +109,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 				try {
 					name = userInputScanner.nextLine();
 				} catch (Exception e) {
-					e.printStackTrace();
 					System.out.println("Unexpected Error: read user input game name");
 					continue;
 				}
@@ -176,7 +170,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 		try {
 			gameName = userInputScanner.nextLine();
 		} catch (Exception e) {
-			e.printStackTrace();
 			System.out.println("Unexpected Error: read user input game name");
 		}
 
