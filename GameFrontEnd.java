@@ -45,7 +45,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 					System.out.println("Invalid input!");
 					continue;
 				}
-			} catch (Exception e) 
+			} catch (Exception e) { 
 				System.out.println("Invalid input!");
 			}
 
