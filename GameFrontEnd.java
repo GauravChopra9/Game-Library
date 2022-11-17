@@ -41,7 +41,7 @@ public class GameFrontEnd implements IGameFrontEnd {
 			// read user's input and check if it's valid
 			try {
 				input = Integer.parseInt(userInputScanner.nextLine());
-				if (input < 1 || input > 5) {
+				if (input < 1 || input > 4) {
 					System.out.println("Invalid input!");
 					continue;
 				}
