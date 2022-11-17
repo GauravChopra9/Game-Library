@@ -4,6 +4,7 @@
 // Email: ibhutoria@wisc.edu
 // Lecture #: 002 @2:30pm
 // Notes to Grader: none
+
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
@@ -15,6 +16,12 @@ import java.util.Scanner;
  * @author Ishan Bhutoria
  */
 public class GameLibraryBackend implements IGameBackend {
+
+	private IRemovingRedBlackTreeADT<AEGame> tree;
+
+	public GameLibraryBackend(IRemovingRedBlackTreeADT<AEGame> tree2) {
+		this.tree = tree2;
+	}
 
 	/**
 	 * Adds a new game to the Backend's database and is stored in the Red-Black
@@ -43,10 +50,11 @@ public class GameLibraryBackend implements IGameBackend {
 			return false;
 		}
 
-		IGame game = new GameBD(name, publisher, year, genre);
-		Comparable gameToAdd = (Comparable) game;
-		GameAE requiredGame = new GameAE();
-		return requiredGame.insert(gameToAdd);
+		AEGame game = new AEGame(name, publisher, year, genre);
+		// Comparable gameToAdd = (Comparable) game;
+		// RemovingRedBlackTree requiredGame = new RemovingRedBlackTree();
+		// RedBlackTreeADTBackend requiredGame = new RedBlackTreeADTBackend();
+		return tree.insert(game);
 	}
 
 	/**
@@ -61,10 +69,12 @@ public class GameLibraryBackend implements IGameBackend {
 			return false;
 		}
 
-		GameAE game = new GameAE();
+		// RemovingRedBlackTree game = new RemovingRedBlackTree();
+		// RedBlackTreeADTBackend game = new RedBlackTreeADTBackend();
+
 		// Removing the game using the name of the game by calling the remove from the
 		// placeholder class
-		return game.remove(name);
+		return tree.remove(name);
 	}
 
 	/**
@@ -80,10 +90,13 @@ public class GameLibraryBackend implements IGameBackend {
 		if (name == null) {
 			return null;
 		}
-		GameAE game = new GameAE();
+
+		// RemovingRedBlackTree game = new RemovingRedBlackTree();
+		// RedBlackTreeADTBackend game = new RedBlackTreeADTBackend();
+
 		// Using the find() method from the placeholder class to find the name of the
 		// game
-		return (IGame) game.find(name);
+		return (IGame) tree.find(name);
 	}
 
 }

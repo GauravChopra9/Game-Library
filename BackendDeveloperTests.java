@@ -23,7 +23,7 @@ public class BackendDeveloperTests {
 	 */
 	@Test
 	public void test1() {
-		GameLibraryBackend test = new GameLibraryBackend();
+		GameLibraryBackend test = new GameLibraryBackend(new RemovingRedBlackTree());
 		String name = "FIFA";
 		String publisher = "Microsoft";
 		String year = "2022";
@@ -38,7 +38,7 @@ public class BackendDeveloperTests {
 	 */
 	@Test
 	public void test2() {
-		GameLibraryBackend test = new GameLibraryBackend();
+		GameLibraryBackend test = new GameLibraryBackend(new RemovingRedBlackTree());
 		String name = "FIFA";
 		String publisher = "Microsoft";
 		// invalid year
@@ -70,7 +70,7 @@ public class BackendDeveloperTests {
 	 */
 	@Test
 	public void test3() {
-		GameLibraryBackend test = new GameLibraryBackend();
+		GameLibraryBackend test = new GameLibraryBackend(new RemovingRedBlackTree());
 		String name = null;
 		String publisher = "Microsoft";
 		String year = "2022";
@@ -95,12 +95,13 @@ public class BackendDeveloperTests {
 	 */
 	@Test
 	public void test4() {
-		GameLibraryBackend test = new GameLibraryBackend();
+		GameLibraryBackend test = new GameLibraryBackend(new RemovingRedBlackTree());
+		test.addGame("FIFA", "ISHAN", "2022", "Gaurav");
 
 		String name = "FIFA";
 		assertTrue(test.removeGame(name));
 
-		name = null;
+	    name = null;
 		assertFalse(test.removeGame(name));
 	}
 
@@ -110,10 +111,11 @@ public class BackendDeveloperTests {
 	 */
 	@Test
 	public void test5() {
-		GameLibraryBackend test = new GameLibraryBackend();
-
+		GameLibraryBackend test = new GameLibraryBackend(new RemovingRedBlackTree());
+		test.addGame("FIFA", "ISHAN", "2022", "Gaurav");
+		
 		String name = "FIFA";
-		assertEquals(test.searchByName(name), null);
+		assertEquals(test.searchByName(name).getName(),"FIFA");
 
 		name = null;
 		assertEquals(test.searchByName(name), null);
