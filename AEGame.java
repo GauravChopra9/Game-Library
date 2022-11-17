@@ -4,7 +4,7 @@ public class AEGame implements IGame, Comparable<AEGame>{
   
   @Override
   public int compareTo(AEGame o) {
-    int compare = this.name.compareTo(o.name);
+    int compare = this.name.toUpperCase().compareTo(o.name.toUpperCase());
     if (compare == 0) {
       compare = this.year.compareTo(o.year);
     }

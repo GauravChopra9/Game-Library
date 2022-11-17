@@ -184,6 +184,7 @@ public class AlgorithmEngineerTests {
     AEGame test4 = new AEGame("The Legend of Zelda, Majora's Mask", "Nintendo", "2000,", "Action-Adventure");
     AEGame test5 = new AEGame("The Legend of Zelda, Majora's Mask", "Nintendo", "2003,", "Action-Adventure");
     AEGame test6 = new AEGame("Elden Ring", "FromSoftware", "2022", "RPG");
+    AEGame test7 = new AEGame("Ishan", "Ishan", "2002", "Ishan");
 
     // add some games
     _instanceGames.insert(test1);
@@ -192,10 +193,12 @@ public class AlgorithmEngineerTests {
     _instanceGames.insert(test4);
     _instanceGames.insert(test5);
     _instanceGames.insert(test6);
-
+    _instanceGames.insert(test7);
     assertEquals(_instanceGames.find("xenoblade chRonicles 3"), test1);
     assertEquals(_instanceGames.find("Final Fantasy III"),test3);
     assertEquals(_instanceGames.find("sdfsdfs"),null);
+    assertEquals(_instanceGames.find("Ishan"),test7);
+    assertTrue(_instanceGames.remove("Ishan"));
 
     assertTrue(!_instanceGames.remove("fghmdrjhrthetghe"));
 
