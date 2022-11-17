@@ -50,8 +50,6 @@ public class GameFrontEnd implements IGameFrontEnd {
 				System.out.println("Invalid input!");
 			}
 
-			System.out.println(input);
-
 			if (input == 1) {
 				// enter the search by name menu if input is 1
 				nameSearch();
